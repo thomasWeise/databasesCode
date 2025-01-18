@@ -12,11 +12,14 @@ set -o errtrace  # trace errors through commands and functions
 set -o nounset   # exit if encountering an uninitialized variable
 set -o errexit   # exit if any statement returns a non-0 return value
 
+# Set up the internal variables.
 directory="$1"
 file="$2"
 db="${3:-}"
 
 # We step-by-step construct the psql query URI.
+# In "uri", we include the actual password for the connection.
+# In "uriShow", we do not print the password, instead we print "pw".
 uri="postgres://"
 if [[ $(declare -p POSTGRES_USER 2>/dev/null) == declare\ ?x* ]]; then
   uri="${uri}${POSTGRES_USER}"
