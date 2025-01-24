@@ -5,6 +5,8 @@
 # Argument $1: the directory
 # Argument $2: the file inside the directory to execute
 # Argument $3 [optional]: the database to use
+# Argument $4 [optional]: the user to use
+# Argument $5 [optional]: the password to use
 
 # We enforce strict error handling, i.e., fail on any unexpected error.
 set -o pipefail  # trace errors through pipes
@@ -16,20 +18,31 @@ set -o errexit   # exit if any statement returns a non-0 return value
 directory="$1"
 file="$2"
 db="${3:-}"
+user="${4:-}"
+password="${5:-}"
 
 # We step-by-step construct the psql query URI.
 # In "uri", we include the actual password for the connection.
 # In "uriShow", we do not print the password, instead we print "pw".
 uri="postgres://"
-if [[ $(declare -p POSTGRES_USER 2>/dev/null) == declare\ ?x* ]]; then
-  uri="${uri}${POSTGRES_USER}"
+if [ -n "$user" ]; then
+  uri="${uri}${user}"
 else
-  uri="${uri}postgres"
+  if [[ $(declare -p POSTGRES_USER 2>/dev/null) == declare\ ?x* ]]; then
+    uri="${uri}${POSTGRES_USER}"
+  else
+    uri="${uri}postgres"
+  fi
 fi
 uriShow="${uri}"
-if [[ $(declare -p POSTGRES_PASSWORD 2>/dev/null) == declare\ ?x* ]]; then
-  uri="${uri}:${POSTGRES_PASSWORD}"
+if [ -n "$password" ]; then
+  uri="${uri}:${password}"
   uriShow="${uriShow}:pw"
+else
+  if [[ $(declare -p POSTGRES_PASSWORD 2>/dev/null) == declare\ ?x* ]]; then
+    uri="${uri}:${POSTGRES_PASSWORD}"
+    uriShow="${uriShow}:pw"
+  fi
 fi
 if [[ $(declare -p POSTGRES_HOST 2>/dev/null) == declare\ ?x* ]]; then
   uri="${uri}@${POSTGRES_HOST}"
