@@ -4,10 +4,10 @@
 -- This allows you to run the example several times without error.
 DROP TABLE IF EXISTS product;
 
--- List all tables of the user 'factory_boss' in database 'factory'
+-- List all tables of the user 'boss' in database 'factory'
 -- There are no tables yet.
 SELECT tablename FROM pg_catalog.pg_tables
-    WHERE tableowner='factory_boss';
+    WHERE tableowner='boss';
 
 -- The table 'product' stores all the produces that we can produce.
 -- Each row of this table identifies one such product.
@@ -21,7 +21,7 @@ CREATE TABLE product (
     depth INT NOT NULL  -- the depth of the product, in mm
 );
 
--- List all tables of the user 'factory_boss' in database 'factory'
+-- List all tables of the user 'boss' in database 'factory'
 -- Now we see the table 'product'.
 SELECT tablename FROM pg_catalog.pg_tables
-    WHERE tableowner='factory_boss';
+    WHERE tableowner='boss';

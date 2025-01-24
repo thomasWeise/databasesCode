@@ -4,10 +4,10 @@
 -- This allows you to run the example several times without error.
 DROP TABLE IF EXISTS customer;
 
--- List all tables of the user 'factory_boss' in database 'factory'
+-- List all tables of the user 'boss' in database 'factory'
 -- There is only the table 'product'.
 SELECT tablename FROM pg_catalog.pg_tables
-    WHERE tableowner='factory_boss';
+    WHERE tableowner='boss';
 
 -- The table 'customer' stores all the customers that we have.
 -- Each row of this table identifies one such a customer.
@@ -18,7 +18,7 @@ CREATE TABLE customer (
     address VARCHAR(255) NOT NULL  -- the address
 );
 
--- List all tables of the user 'factory_boss' in database 'customer'
+-- List all tables of the user 'boss' in database 'customer'
 -- Now we see the table 'customer'.
 SELECT tablename FROM pg_catalog.pg_tables
-    WHERE tableowner='factory_boss';
+    WHERE tableowner='boss';

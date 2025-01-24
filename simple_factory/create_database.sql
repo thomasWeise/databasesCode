@@ -8,8 +8,8 @@ DROP DATABASE IF EXISTS factory;
 -- We print the column `datname` with the names of the databases.
 SELECT datname FROM pg_database;
 
--- Create the database 'factory', owned by user 'factory_boss'.
-CREATE DATABASE factory OWNER factory_boss;
+-- Create the database 'factory', owned by user 'boss'.
+CREATE DATABASE factory OWNER boss;
 
 -- Store a comment about the purpose of our database.
 COMMENT ON DATABASE factory is

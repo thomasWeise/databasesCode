@@ -4,10 +4,10 @@
 -- This allows you to run the example several times without error.
 DROP TABLE IF EXISTS demand;
 
--- List all tables of the user 'factory_boss' in database 'factory'
+-- List all tables of the user 'boss' in database 'factory'
 -- There are two tables: 'customer' and 'product'.
 SELECT tablename FROM pg_catalog.pg_tables
-    WHERE tableowner='factory_boss';
+    WHERE tableowner='boss';
 
 -- The table 'demand' stores all the customer orders.
 CREATE TABLE demand (
@@ -17,7 +17,7 @@ CREATE TABLE demand (
     amount INT NOT NULL
 );
 
--- List all tables of the user 'factory_boss' in database 'factory'
+-- List all tables of the user 'boss' in database 'factory'
 -- Now we see the table 'demand'.
 SELECT tablename FROM pg_catalog.pg_tables
-    WHERE tableowner='factory_boss';
+    WHERE tableowner='boss';
