@@ -1,8 +1,5 @@
 /* Create a view showing the sales information */
 
--- Delete the view if it already exists.
-DROP VIEW IF EXISTS sale;
-
 -- We combine the three tables customer, product, and demand.
 -- Basically, for each row in 'demand', we find the corresponding rows
 -- in the 'customer' and 'product' tables (via the INNER JOIN).

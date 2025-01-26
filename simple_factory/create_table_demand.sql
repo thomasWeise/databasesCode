@@ -1,9 +1,5 @@
 /* We create the new table 'demand' in our factory database. */
 
--- Delete the table 'demand' if it exists in database 'factory'.
--- This allows you to run the example several times without error.
-DROP TABLE IF EXISTS demand;
-
 -- List all tables of the user 'boss' in database 'factory'
 -- There are two tables: 'customer' and 'product'.
 SELECT tablename FROM pg_catalog.pg_tables
