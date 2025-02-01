@@ -623,3 +623,4 @@ auto-import.
 **/.idea/modules
 *.iml
 *.ipr
+/xc.sh
