@@ -18,6 +18,8 @@ source "$exampleDir/../.venv/bin/activate"
 #: the postgre sql script
 postgres="$exampleDir/../_scripts_/postgres.sh"
 
+"$exampleDir/cleanup_example.sh"
+
 "$postgres" "$exampleDir" cleanup_inside_database.sql factory boss superboss123
 "$postgres" "$exampleDir" cleanup_database_and_user.sql
 
