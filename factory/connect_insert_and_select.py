@@ -8,12 +8,12 @@ with (connect("postgres://boss:superboss123@localhost/factory") as conn,
       conn.cursor(row_factory=dict_row) as cur):  # SELECT returns dicts
     print("Executing a single INSERT statement.")
     cur.execute(  # Insert one new demand record.
-        "INSERT INTO demand (customer, product, amount) VALUES (%s, %s, %s)",
+        "INSERT INTO demand (customer, product, amount) VALUES (%s,%s,%s)",
         (3, 4, 5))
 
     print("Executing a several INSERT statements at once.")
     cur.executemany(  # Insert three new demand records.
-        "INSERT INTO demand (customer, product, amount) VALUES (%s, %s, %s)",
+        "INSERT INTO demand (customer, product, amount) VALUES (%s,%s,%s)",
         ((3, 5, 2), (2, 7, 1), (1, 10, 5)))
 
     print("Now performing a SELECT request for customer Bebbo (id 2).")
