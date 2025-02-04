@@ -4,6 +4,7 @@ Here we provide all the example programs and codes for our book "[Databases](htt
 
 ## 1. Structure
 
+This repository offers several different examples.
 To do.
 
 ## 2. License
