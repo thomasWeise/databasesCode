@@ -7,7 +7,8 @@ CREATE TABLE customer (
     name VARCHAR(100) NOT NULL,  -- must exist
     phone VARCHAR(11) NOT NULL UNIQUE,  -- the phone number
     address VARCHAR(255) NOT NULL,  -- the address
-    CONSTRAINT customer_valid_phone CHECK (phone ~ '\d{10,11}')
+    CONSTRAINT customer_name_ok CHECK (name ~ '^[A-Z].*[a-z]$'),
+    CONSTRAINT customer_valid_phone CHECK (phone ~ '^\d{10,11}$')
 );
 
 -- List all tables of the user 'boss' in database 'customer'
