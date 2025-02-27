@@ -28,8 +28,8 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 
 "$postgres" "$exampleDir" create_table_product.sql factory boss superboss123
 "$postgres" "$exampleDir" insert_into_table_product.sql factory boss superboss123
-"$postgres" "$exampleDir" select_from_table_product.sql factory boss superboss123
 "$postgres" "$exampleDir" insert_into_table_product_error.sql factory boss superboss123
+"$postgres" "$exampleDir" select_from_table_product.sql factory boss superboss123
 "$postgres" "$exampleDir" create_table_customer.sql factory boss superboss123
 "$postgres" "$exampleDir" insert_into_table_customer.sql factory boss superboss123
 "$postgres" "$exampleDir" create_table_demand.sql factory boss superboss123
