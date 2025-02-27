@@ -15,7 +15,7 @@ VALUES ('Shoe, Size 36', 150.99, 1300, 350, 250, 130),
        ('Shoe, Size 43', 164.99, 1475, 350, 250, 130),
        ('Small Purse', 100, 500, 350, 250, 130),
        ('Medium Purse', 120, 750, 400, 300, 200),
-       ('Large Purse', 150, 1500, 600, 4000, 250);
+       ('Large Purse', 150, 1500, 600, 300, 250);
 
 -- Now there are 11 rows.
 SELECT * from product;
