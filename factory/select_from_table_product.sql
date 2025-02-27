@@ -1,10 +1,10 @@
-/* Print some data from the table product. */
+/* Extract information from the table product. */
 
 -- List the names and prices of all purses.
-SELECT name, price from product WHERE name LIKE '%Purse%';
+SELECT name, price FROM product WHERE name LIKE '%Purse%';
 
 -- Order anything that is not a shoe in terms of grams per yuan.
-SELECT name, weight / price as g_per_yuan from product
+SELECT name, weight / price AS g_per_yuan from product
   ORDER BY g_per_yuan DESC LIMIT 5;
 
 -- Get the average price per product type.
