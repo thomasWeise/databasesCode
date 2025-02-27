@@ -4,7 +4,7 @@
 SELECT * from customer;
 
 -- Insert 4 customers into our table.
-INSERT INTO customer (name, mobile, address)
+INSERT INTO customer (name, phone, address)
 VALUES ('Bibbo', '99999999999', 'Hefei, Jinxiu Dadao 99'),
        ('Bebbo', '55555555555', 'Rathaus, Chemnitz, Germany'),
        ('Bebba', '33333333333', 'Times Square, NY, USA'),
