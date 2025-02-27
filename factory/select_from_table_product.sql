@@ -10,5 +10,5 @@ SELECT name, weight / price AS g_per_yuan from product
 -- Get the average price per product type.
 SELECT 'Shoe' AS kind, AVG(price) AS mean_price
     FROM product WHERE name LIKE '%Shoe%'
-UNION SELECT 'Purse' AS kind, AVG(price) AS mean_price
+UNION ALL SELECT 'Purse' AS kind, AVG(price) AS mean_price
     FROM product WHERE name LIKE '%Purse%';
