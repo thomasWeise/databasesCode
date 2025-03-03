@@ -37,8 +37,9 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 
 "$postgres" "$exampleDir" select_customer_demand.sql factory boss superboss123
 "$postgres" "$exampleDir" create_view_sale.sql factory boss superboss123
-"$postgres" "$exampleDir" select_sale.sql factory boss superboss123
+"$postgres" "$exampleDir" select_from_view_sale_1.sql factory boss superboss123
+"$postgres" "$exampleDir" select_from_view_sale_2.sql factory boss superboss123
 
 python3 connect_insert_and_select.py
 
-"$postgres" "$exampleDir" select_sale.sql factory boss superboss123
+"$postgres" "$exampleDir" select_from_view_sale_3.sql factory boss superboss123
