@@ -15,8 +15,8 @@ with (connect("postgres://boss:superboss123@localhost/factory") as conn,
     cur.execute(statement,  # Insert one new demand record.
                 (3, 4, 5, "2025-03-05" ))
 
-    print("Executing a several INSERT statements at once.")
-    cur.executemany(statement, (  # Insert several new demand records.
+    print("Executing three INSERT statements at once.")
+    cur.executemany(statement, (  # Insert three new demand records.
         (3, 5, 2, "2025-03-16"), (2, 7, 1, "2025-03-29"),
         (1, 10, 5, "2025-04-05")))
 
