@@ -1,4 +1,4 @@
-/* Extract some information from our database using the view 'sale'. */
+/* Extract information from 'sale' but limit the date range. */
 
 -- Get the total sales per customer in 2025.
 SELECT customer_name, SUM(amount * price) AS customer_sale FROM sale
