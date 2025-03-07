@@ -40,6 +40,10 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 "$postgres" "$exampleDir" select_from_view_sale_1.sql factory boss superboss123
 "$postgres" "$exampleDir" select_from_view_sale_2.sql factory boss superboss123
 
+"$postgres" "$exampleDir" update_table_product.sql factory boss superboss123
+"$postgres" "$exampleDir" delete_from_table_product.sql factory boss superboss123
+
 python3 connect_insert_and_select.py
 
 "$postgres" "$exampleDir" select_from_view_sale_3.sql factory boss superboss123
+"$postgres" "$exampleDir" update_according_to_base_example.sql factory boss superboss123
