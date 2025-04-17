@@ -13,7 +13,6 @@ exampleDir="$(readlink -f "$(dirname "$0")")"
 cd "$exampleDir"
 
 #: the postgre sql script
-postgres="$exampleDir/../_scripts_/postgres.sh"
+postgres="$exampleDir/../../_scripts_/postgres.sh"
 
-"$postgres" "$exampleDir" cleanup_inside_database.sql factory boss superboss123
-"$postgres" "$exampleDir" cleanup_database_and_user.sql
+"$postgres" "$exampleDir" cleanup_databases.sql

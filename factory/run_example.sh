@@ -20,9 +20,6 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 
 "$exampleDir/cleanup_example.sh"
 
-"$postgres" "$exampleDir" cleanup_inside_database.sql factory boss superboss123
-"$postgres" "$exampleDir" cleanup_database_and_user.sql
-
 "$postgres" "$exampleDir" create_user.sql
 "$postgres" "$exampleDir" create_database.sql
 

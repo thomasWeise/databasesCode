@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Clean up the example.
+# Run all the scripts of the logical model example.
 
 # strict error handling
 set -o pipefail  # trace ERR through pipes
@@ -13,7 +13,8 @@ exampleDir="$(readlink -f "$(dirname "$0")")"
 cd "$exampleDir"
 
 #: the postgre sql script
-postgres="$exampleDir/../_scripts_/postgres.sh"
+postgres="$exampleDir/../../_scripts_/postgres.sh"
 
-"$postgres" "$exampleDir" cleanup_inside_database.sql factory boss superboss123
-"$postgres" "$exampleDir" cleanup_database_and_user.sql
+"$exampleDir/cleanup_example.sh"
+
+"$postgres" "$exampleDir" student_database.sql
