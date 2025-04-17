@@ -15,4 +15,4 @@ cd "$exampleDir"
 #: the postgre sql script
 postgres="$exampleDir/../../_scripts_/postgres.sh"
 
-"$postgres" "$exampleDir" cleanup.sql
+"$postgres" "$exampleDir" cleanup_student_database.sql
