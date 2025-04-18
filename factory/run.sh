@@ -18,7 +18,7 @@ source "$exampleDir/../.venv/bin/activate"
 #: the postgre sql script
 postgres="$exampleDir/../_scripts_/postgres.sh"
 
-"$exampleDir/cleanup_example.sh"
+"$exampleDir/cleanup.sh"
 
 "$postgres" "$exampleDir" create_user.sql
 "$postgres" "$exampleDir" create_database.sql

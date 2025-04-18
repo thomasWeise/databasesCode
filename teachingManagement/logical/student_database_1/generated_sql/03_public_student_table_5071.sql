@@ -1,18 +1,3 @@
--- Database generated with pgModeler (PostgreSQL Database Modeler).
--- pgModeler version: 1.1.0-beta1
--- PostgreSQL version: 16.0
--- Project Site: pgmodeler.io
--- Model Author: ---
-
--- Database creation must be performed outside a multi lined SQL file. 
--- These commands were put in this file only as a convenience.
--- 
--- object: student_database | type: DATABASE --
--- DROP DATABASE IF EXISTS student_database;
-CREATE DATABASE student_database;
--- ddl-end --
-
-
 -- object: public.student | type: TABLE --
 -- DROP TABLE IF EXISTS public.student CASCADE;
 CREATE TABLE public.student (
@@ -31,5 +16,4 @@ CREATE TABLE public.student (
 -- ddl-end --
 ALTER TABLE public.student OWNER TO postgres;
 -- ddl-end --
-
 

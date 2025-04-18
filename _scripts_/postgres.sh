@@ -65,7 +65,7 @@ fi
 echo "$ psql \"${uriShow}\" -v ON_ERROR_STOP=1 -ebf $file"
 
 set +o errexit  # Turn off exit-on-error.
-psql "$uri" -v ON_ERROR_STOP=1 -ebf "$directory/$file" 2>&1
+psql "$uri" -P pager=off -v ON_ERROR_STOP=1 -ebf "$directory/$file" 2>&1
 exitCode="$?"  # Store exit code of program in variable exitCode.
 set -o errexit  # Turn exit-on-error back on.
 
