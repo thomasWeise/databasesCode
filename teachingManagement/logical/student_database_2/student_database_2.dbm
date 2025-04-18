@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.1.0-beta1" use-changelog="false" last-position="0,4" last-zoom="1" max-obj-count="4"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="student_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" name-color="#000000" sql-disabled="true">
+</schema>
+
+<table name="student" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="40" y="40"/>
+	<column name="student_id" not-null="true">
+		<type name="character" length="11"/>
+	</column>
+	<column name="national_id" not-null="true">
+		<type name="character" length="18"/>
+	</column>
+	<column name="address" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="date_of_birth" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="full_name" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="salutation">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="student_student_id_pk" type="pk-constr" table="public.student">
+		<columns names="student_id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="student_national_id_check" type="ck-constr" table="public.student">
+			<expression> <![CDATA[national_id ~ '^\d{6}((19)|(20))\d{9}[0-9X]$']]> </expression>
+	</constraint>
+	<constraint name="student_date_of_birth_check" type="ck-constr" table="public.student">
+			<expression> <![CDATA[(date_of_birth > '1900-01-01') AND (date_of_birth < '2100-01-01')]]> </expression>
+	</constraint>
+</table>
+
+<table name="mobile" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="420" y="120"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="phone" not-null="true">
+		<type name="character" length="11"/>
+	</column>
+	<column name="student" not-null="true">
+		<type name="character" length="11"/>
+	</column>
+	<constraint name="mobile_id_pk" type="pk-constr" table="public.mobile">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="mobile_phone_check" type="ck-constr" table="public.mobile">
+			<expression> <![CDATA[phone ~ '^\d{11}$']]> </expression>
+	</constraint>
+</table>
+
+<constraint name="mobile_student_id_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.student" table="public.mobile">
+	<columns names="student" ref-type="src-columns"/>
+	<columns names="student_id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_mobile_student" type="relfk" layers="0"
+	 src-table="public.mobile"
+	 dst-table="public.student" reference-fk="mobile_student_id_fk"
+	 src-required="false" dst-required="true"/>
+
+</dbmodel>

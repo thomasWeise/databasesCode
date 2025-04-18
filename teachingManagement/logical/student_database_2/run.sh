@@ -19,4 +19,6 @@ postgres="$exampleDir/../../../_scripts_/postgres.sh"
 
 "$postgres" "$exampleDir/generated_sql" 01_student_database_database_2001.sql
 "$postgres" "$exampleDir/generated_sql" 03_public_student_table_5071.sql student_database
-"$postgres" "$exampleDir" insert.sql student_database
+"$postgres" "$exampleDir/generated_sql" 04_public_mobile_table_5081.sql student_database
+"$postgres" "$exampleDir/generated_sql" 05_public_mobile_mobile_student_id_fk_constraint_5087.sql student_database
+"$postgres" "$exampleDir" insert_and_select.sql student_database
