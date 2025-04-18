@@ -9,7 +9,7 @@ INSERT INTO student (student_id, national_id, name, address, mobile,
      '12345678902', '2005-08-07');
 
 -- Print the records that were inserted.
-SELECT * from student;
+SELECT student_id, name from student;
 
 -- Try inserting an invalid record: The date of birth is way too early.
 INSERT INTO student (student_id, national_id, name, address, mobile,
