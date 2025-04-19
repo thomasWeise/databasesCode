@@ -21,12 +21,19 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 
 "$postgres" "$exampleDir" AB_1_tables.sql relationships
 "$postgres" "$exampleDir" AB_1_insert_and_select.sql relationships
-"$postgres" "$exampleDir" AB_1_insert_error.sql relationships
+"$postgres" "$exampleDir" AB_1_insert_error_1.sql relationships
+"$postgres" "$exampleDir" AB_1_insert_error_2.sql relationships
 "$postgres" "$exampleDir" AB_1_cleanup.sql relationships
 
 "$postgres" "$exampleDir" AB_2_tables.sql relationships
 "$postgres" "$exampleDir" AB_2_insert_and_select.sql relationships
-"$postgres" "$exampleDir" AB_2_insert_error.sql relationships
+"$postgres" "$exampleDir" AB_2_insert_error_1_impossible.sql relationships
+"$postgres" "$exampleDir" AB_2_insert_error_2.sql relationships
 "$postgres" "$exampleDir" AB_2_cleanup.sql relationships
+
+"$postgres" "$exampleDir" CD_tables.sql relationships
+"$postgres" "$exampleDir" CD_insert_and_select.sql relationships
+"$postgres" "$exampleDir" CD_insert_error.sql relationships
+"$postgres" "$exampleDir" CD_cleanup.sql relationships
 
 "$postgres" "$exampleDir" cleanup.sql
