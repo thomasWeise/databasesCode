@@ -36,4 +36,13 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 "$postgres" "$exampleDir" CD_insert_error.sql relationships
 "$postgres" "$exampleDir" CD_cleanup.sql relationships
 
+"$postgres" "$exampleDir" EF_1_tables.sql relationships
+"$postgres" "$exampleDir" EF_1_insert_and_select.sql relationships
+"$postgres" "$exampleDir" EF_1_insert_error.sql relationships
+"$postgres" "$exampleDir" EF_1_cleanup.sql relationships
+
+"$postgres" "$exampleDir" EF_2_tables.sql relationships
+"$postgres" "$exampleDir" EF_2_insert_and_select.sql relationships
+"$postgres" "$exampleDir" EF_2_cleanup.sql relationships
+
 "$postgres" "$exampleDir" cleanup.sql
