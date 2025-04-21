@@ -55,4 +55,8 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 "$postgres" "$exampleDir" IJ_tables.sql relationships
 "$postgres" "$exampleDir" IJ_cleanup.sql relationships
 
+"$postgres" "$exampleDir" KL_tables.sql relationships
+"$postgres" "$exampleDir" KL_insert_and_select.sql relationships
+"$postgres" "$exampleDir" KL_cleanup.sql relationships
+
 "$postgres" "$exampleDir" cleanup.sql
