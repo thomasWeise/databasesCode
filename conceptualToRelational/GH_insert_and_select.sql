@@ -1,15 +1,16 @@
 /* Insert into tables for G-|o-----|<-H relationship. */
 
 -- Insert some rows into the table for entity type H.
+-- We can only create rows in G related to existing H entities.
 INSERT INTO h (y) VALUES ('AB'), ('CD'), ('EF'), ('GH');
 
-INSERT INTO g (x, h) VALUES ('123', 1);  -- gets id 1
-INSERT INTO relate_g_and_h (g, h) VALUES (1, 1);
-
--- Insert into g and relate_g_and_h at the same time(?)
+-- Insert into G and relate_g_and_h at the same time.
+-- This creates G entry with id 1 and relationship (1, 1).
 WITH g_id AS (INSERT INTO g (x, h) VALUES ('123', 1) RETURNING id)
     INSERT INTO relate_g_and_h (g, h) SELECT id, 1 FROM g_id;
 
+-- Insert into G and relate_g_and_h at the same time.
+-- This creates G entry with id 2 and relationship (2, 4).
 WITH g_id AS (INSERT INTO g (x, h) VALUES ('789', 4) RETURNING id)
     INSERT INTO relate_g_and_h (g, h) SELECT id, 4 FROM g_id;
 
