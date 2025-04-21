@@ -47,6 +47,9 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 
 "$postgres" "$exampleDir" GH_tables.sql relationships
 "$postgres" "$exampleDir" GH_insert_and_select.sql relationships
+"$postgres" "$exampleDir" GH_insert_error_1.sql relationships
+"$postgres" "$exampleDir" GH_insert_error_2.sql relationships
+"$postgres" "$exampleDir" GH_insert_error_3.sql relationships
 "$postgres" "$exampleDir" GH_cleanup.sql relationships
 
 "$postgres" "$exampleDir" cleanup.sql
