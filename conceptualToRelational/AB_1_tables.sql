@@ -14,6 +14,6 @@ CREATE TABLE b (
 
 -- The table for managing the relationship between A and B.
 CREATE TABLE relate_a_and_b (
-    a INT NOT NULL UNIQUE PRIMARY KEY REFERENCES a(id),
-    b INT NOT NULL UNIQUE             REFERENCES b(id)
+    a INT NOT NULL UNIQUE PRIMARY KEY REFERENCES a (id),
+    b INT NOT NULL UNIQUE             REFERENCES b (id)
 );

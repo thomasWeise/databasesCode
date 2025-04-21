@@ -14,6 +14,6 @@ CREATE TABLE f (
 
 -- The table for managing the relationship between E and F.
 CREATE TABLE relate_e_and_f (
-    e INT NOT NULL                    REFERENCES e(id),
-    f INT NOT NULL UNIQUE PRIMARY KEY REFERENCES f(id)
+    e INT NOT NULL                    REFERENCES e (id),
+    f INT NOT NULL UNIQUE PRIMARY KEY REFERENCES f (id)
 );
