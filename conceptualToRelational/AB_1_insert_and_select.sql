@@ -10,6 +10,6 @@ INSERT INTO b (y) VALUES ('AB'), ('CD'), ('EF'), ('GH');
 INSERT INTO relate_a_and_b (a, b) VALUES (1, 1), (2, 3), (3, 4);
 
 -- Combine the rows from A and B. This needs two INNER JOINs.
-SELECT a.x, b.y FROM a
+SELECT a.id AS a_id, a.x, b.id AS b_id, b.y FROM a
     INNER JOIN relate_a_and_b ON a.id = relate_a_and_b.a
     INNER JOIN b ON b.id = relate_a_and_b.b;

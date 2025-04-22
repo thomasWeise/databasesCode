@@ -19,6 +19,6 @@ WITH g_id AS (INSERT INTO g (x, h) VALUES ('789', 4) RETURNING id)
 INSERT INTO relate_g_and_h VALUES (1, 2);
 
 -- Combine the rows from G and H. This needs two INNER JOINs.
-SELECT g.x, h.y FROM g
+SELECT g.id AS g_id, g.x, h.id AS h_id, h.y FROM g
     INNER JOIN relate_g_and_h ON g.id = relate_g_and_h.g
     INNER JOIN h ON h.id = relate_g_and_h.h;

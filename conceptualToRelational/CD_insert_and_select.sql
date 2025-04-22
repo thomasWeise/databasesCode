@@ -10,4 +10,5 @@ INSERT INTO c (d, x) VALUES (1, '123'), (3, '456'), (4, '789'),
                             (2, '101');
 
 -- Combine the rows from C and D.
-SELECT c.x, d.y FROM c INNER JOIN d ON c.d = d.id;
+SELECT c.id AS c_id, c.x, d.id AS d_id, d.y FROM c
+    INNER JOIN d ON c.d = d.id;

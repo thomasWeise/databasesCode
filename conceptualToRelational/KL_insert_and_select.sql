@@ -8,4 +8,5 @@ INSERT INTO l (y, k) VALUES ('AB', 1), ('CD', 1), ('EF', 4),
                             ('GH', 3);
 
 -- Combine the rows from K and L.
-SELECT k.x, l.y FROM l INNER JOIN k ON l.k = k.id;
+SELECT k.id AS k_id, k.x, l.id AS l_id, l.y FROM l
+    INNER JOIN k ON l.k = k.id;
