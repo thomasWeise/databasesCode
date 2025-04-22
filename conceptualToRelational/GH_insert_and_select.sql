@@ -1,24 +1,23 @@
 /* Insert into tables for G-|o-----|<-H relationship. */
 
 -- Insert some rows into the table for entity type H.
--- We can only create rows in G related to existing H entities.
-INSERT INTO h (y) VALUES ('AB'), ('CD'), ('EF'), ('GH');
+-- Not specifying `g` leave the references G as NULL for now.
+INSERT INTO h (y) VALUES ('AB'), ('CD'), ('EF'), ('GH'), ('IJ'), ('KL');
 
--- Insert into G and relate_g_and_h at the same time.
--- This creates G entry with id 1 and relationship (1, 1).
-WITH g_id AS (INSERT INTO g (x, h) VALUES ('123', 1) RETURNING id)
-    INSERT INTO relate_g_and_h (g, h) SELECT id, 1 FROM g_id;
+-- Insert into G and relate to H. We do this three times.
+WITH g_id AS (INSERT INTO g (h, x) VALUES (1, '123') RETURNING id)
+    UPDATE h SET g = g_id.id FROM g_id WHERE h.id = 1;
 
--- Insert into G and relate_g_and_h at the same time.
--- This creates G entry with id 2 and relationship (2, 4).
-WITH g_id AS (INSERT INTO g (x, h) VALUES ('789', 4) RETURNING id)
-    INSERT INTO relate_g_and_h (g, h) SELECT id, 4 FROM g_id;
+WITH g_id AS (INSERT INTO g (h, x) VALUES (3, '456') RETURNING id)
+    UPDATE h SET g = g_id.id FROM g_id WHERE h.id = 3;
 
--- The second relation between the first G entity and a H entity can be
--- inserted much more easily.
-INSERT INTO relate_g_and_h VALUES (1, 2);
+WITH g_id AS (INSERT INTO g (h, x) VALUES (4, '789') RETURNING id)
+    UPDATE h SET g = g_id.id FROM g_id WHERE h.id = 4;
 
--- Combine the rows from G and H. This needs two INNER JOINs.
-SELECT g.id AS g_id, g.x, h.id AS h_id, h.y FROM g
-    INNER JOIN relate_g_and_h ON g.id = relate_g_and_h.g
-    INNER JOIN h ON h.id = relate_g_and_h.h;
+-- Link one H row to another G row. (We do this twice.)
+UPDATE h SET g = 3 WHERE id = 2;
+UPDATE h SET g = 3 WHERE id = 5;
+
+-- Combine the rows from G and H.
+SELECT g.id AS g_id, g.x, h.id AS h_id, h.y FROM h
+    INNER JOIN g ON g.id = h.g;

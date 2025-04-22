@@ -1,4 +1,3 @@
-/* Trying to insert data step-by-step. */
+/* Can we create a row in G related to a row in H unrelated to any G? */
 
-INSERT INTO relate_g_and_h (g, h) VALUES (4, 3);
-INSERT INTO g (x, h) VALUES ('456', 3);  -- would probably get id 4
+INSERT INTO g (h, x) VALUES (6, '222');

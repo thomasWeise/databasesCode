@@ -1,29 +1,28 @@
 /* Insert into tables for M-||-----|<-n relationship. */
 
--- Insert into M and N and relate_m_and_n at the same time.
--- This creates M entry with id 1, and N entry with id 2, and
--- relationship (1, 2).
-WITH new_ids AS (INSERT INTO relate_m_and_n (m, n)
-        SELECT NEXTVAL('mn_id'), NEXTVAL('mn_id') RETURNING m, n),
-     m_new AS (INSERT INTO m (id, x, n)
-        SELECT m, '123', n FROM new_ids RETURNING id, n)
-     INSERT INTO n (id, y, m) SELECT n,  'AB', id FROM m_new;
+-- Insert into M and N at the same time.
+-- This creates M entry with id 1, and N entry with id 1, and
+-- relationship (1, 1).
+WITH new_m AS (SELECT NEXTVAL('m_id') AS m_id),
+     new_n AS (INSERT INTO n (y, m) SELECT 'AB', m_id FROM new_m RETURNING id, m)
+     INSERT INTO m (id, x, n) SELECT m, '123', id FROM new_n;
 
--- Create a new row in N that references and existing row in M.
-WITH n_new AS (INSERT INTO n (y, m)
-        SELECT 'CD', m.id FROM m WHERE x = '123' RETURNING id, m)
-     INSERT INTO relate_m_and_n (m, n) SELECT m, id FROM n_new;
+-- Create a new row in N referencing an existing row in M.
+INSERT INTO n (y, m) VALUES ('CD', 1);
 
--- Insert into M and N and relate_m_and_n at the same time.
--- This creates M entry with id 4, and N entry with id 5, and
--- relationship (4, 5).
-WITH new_ids AS (INSERT INTO relate_m_and_n (m, n)
-        SELECT NEXTVAL('mn_id'), NEXTVAL('mn_id') RETURNING m, n),
-     m_new   AS (INSERT INTO m (id, x, n)
-        SELECT m, '456', n FROM new_ids RETURNING id, n)
-     INSERT INTO n (id, y, m) SELECT n,  'EF', id FROM m_new;
+-- Insert into M and N at the same time.
+WITH new_m AS (SELECT NEXTVAL('m_id') AS m_id),
+     new_n AS (INSERT INTO n (y, m) SELECT 'EF', m_id FROM new_m RETURNING id, m)
+     INSERT INTO m (id, x, n) SELECT m, '456', id FROM new_n;
+
+-- Insert into M and N at the same time.
+WITH new_m AS (SELECT NEXTVAL('m_id') AS m_id),
+     new_n AS (INSERT INTO n (y, m) SELECT 'GH', m_id FROM new_m RETURNING id, m)
+     INSERT INTO m (id, x, n) SELECT m, '789', id FROM new_n;
+
+-- Create a new row in N referencing an existing row in M.
+INSERT INTO n (y, m) VALUES ('IJ', 1);
 
 -- Combine the rows from M and N. This needs two INNER JOINs.
-SELECT m.id AS m_id, m.x, n.id AS n_id, n.y FROM m
-    INNER JOIN relate_m_and_n ON m.id = relate_m_and_n.m
-    INNER JOIN n ON n.id = relate_m_and_n.n;
+SELECT m.id AS m_id, m.x, n.id AS n_id, n.y FROM n
+    INNER JOIN m ON n.m = m.id;

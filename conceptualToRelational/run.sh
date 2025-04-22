@@ -50,6 +50,8 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 "$postgres" "$exampleDir" GH_insert_error_1.sql relationships
 "$postgres" "$exampleDir" GH_insert_error_2.sql relationships
 "$postgres" "$exampleDir" GH_insert_error_3.sql relationships
+"$postgres" "$exampleDir" GH_insert_error_4.sql relationships
+"$postgres" "$exampleDir" GH_insert_error_5.sql relationships
 "$postgres" "$exampleDir" GH_cleanup.sql relationships
 
 "$postgres" "$exampleDir" IJ_tables.sql relationships
