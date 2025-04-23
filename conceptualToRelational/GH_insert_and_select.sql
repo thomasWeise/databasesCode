@@ -5,14 +5,14 @@
 INSERT INTO h (y) VALUES ('AB'), ('CD'), ('EF'), ('GH'), ('IJ'), ('KL');
 
 -- Insert into G and relate to H. We do this three times.
-WITH g_id AS (INSERT INTO g (h, x) VALUES (1, '123') RETURNING id)
-    UPDATE h SET g = g_id.id FROM g_id WHERE h.id = 1;
+WITH g_id AS (INSERT INTO g (h, x) VALUES (1, '123') RETURNING h, id)
+    UPDATE h SET g = g_id.id FROM g_id WHERE h.id = g_id.h;
 
-WITH g_id AS (INSERT INTO g (h, x) VALUES (3, '456') RETURNING id)
-    UPDATE h SET g = g_id.id FROM g_id WHERE h.id = 3;
+WITH g_id AS (INSERT INTO g (h, x) VALUES (3, '456') RETURNING id, h)
+    UPDATE h SET g = g_id.id FROM g_id WHERE h.id = g_id.h;
 
-WITH g_id AS (INSERT INTO g (h, x) VALUES (4, '789') RETURNING id)
-    UPDATE h SET g = g_id.id FROM g_id WHERE h.id = 4;
+WITH g_id AS (INSERT INTO g (h, x) VALUES (4, '789') RETURNING id, h)
+    UPDATE h SET g = g_id.id FROM g_id WHERE h.id = g_id.h;
 
 -- Link one H row to another G row. (We do this twice.)
 UPDATE h SET g = 3 WHERE id = 2;
