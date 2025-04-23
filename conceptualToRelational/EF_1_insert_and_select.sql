@@ -7,9 +7,9 @@ INSERT INTO e (x) VALUES ('123'), ('456'), ('789'), ('101');
 INSERT INTO f (y) VALUES ('AB'), ('CD'), ('EF'), ('GH');
 
 -- Create the relationships between the E and F rows.
-INSERT INTO relate_e_and_f (e, f) VALUES (1, 1), (1, 2), (3, 4);
+INSERT INTO relate_e_and_f (fkeid, fkfid) VALUES (1, 1), (1, 2), (3, 4);
 
 -- Combine the rows from E and F. This needs two INNER JOINs.
-SELECT e.id AS e_id, e.x, f.id AS f_id, f.y FROM e
-    INNER JOIN relate_e_and_f ON e.id = relate_e_and_f.e
-    INNER JOIN f ON f.id = relate_e_and_f.f;
+SELECT eid, x, fid, y FROM e
+    INNER JOIN relate_e_and_f ON e.eid = relate_e_and_f.fkeid
+    INNER JOIN f              ON f.fid = relate_e_and_f.fkfid;

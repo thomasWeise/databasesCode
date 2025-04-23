@@ -6,9 +6,8 @@
 INSERT INTO d (y) VALUES ('AB'), ('CD'), ('EF'), ('GH');
 
 -- Insert some rows into the table for entity type C.
-INSERT INTO c (d, x) VALUES (1, '123'), (3, '456'), (4, '789'),
-                            (2, '101');
+INSERT INTO c (fkdid, x) VALUES (1, '123'), (3, '456'), (4, '789'),
+                                (2, '101');
 
 -- Combine the rows from C and D.
-SELECT c.id AS c_id, c.x, d.id AS d_id, d.y FROM c
-    INNER JOIN d ON c.d = d.id;
+SELECT cid, x, did, y FROM c INNER JOIN d ON c.fkdid = d.did;

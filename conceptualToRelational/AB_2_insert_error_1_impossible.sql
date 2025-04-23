@@ -6,4 +6,4 @@
 -- this will simply overwrite the old relationship.
 -- No entity of type A can ever assigned to more than one entity of
 -- type B.
-UPDATE a SET b = 2 where id = 1;
+UPDATE a SET fkbid = 2 where aid = 1;

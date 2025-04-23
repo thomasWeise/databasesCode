@@ -2,4 +2,4 @@
 
 -- H with id 1 is used as "primary H" for G with ID 1.
 -- Can we make it point to another G?
-UPDATE h SET g = 3 WHERE id = 1;
+UPDATE h SET fkgid = 3 WHERE hid = 1;

@@ -4,9 +4,8 @@
 INSERT INTO k (x) VALUES ('123'), ('456'), ('789'), ('101');
 
 -- Insert some rows into the table for entity type L, referencing K.
-INSERT INTO l (y, k) VALUES ('AB', 1), ('CD', 1), ('EF', 4),
-                            ('GH', 3);
+INSERT INTO l (y, fkkid) VALUES ('AB', 1), ('CD', 1), ('EF', 4),
+                                ('GH', 3);
 
 -- Combine the rows from K and L.
-SELECT k.id AS k_id, k.x, l.id AS l_id, l.y FROM l
-    INNER JOIN k ON l.k = k.id;
+SELECT kid, x, lid, y FROM l INNER JOIN k ON l.fkkid = k.kid;

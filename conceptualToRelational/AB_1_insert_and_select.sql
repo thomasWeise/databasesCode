@@ -7,9 +7,9 @@ INSERT INTO a (x) VALUES ('123'), ('456'), ('789'), ('101');
 INSERT INTO b (y) VALUES ('AB'), ('CD'), ('EF'), ('GH');
 
 -- Create the relationships between the A and B rows.
-INSERT INTO relate_a_and_b (a, b) VALUES (1, 1), (2, 3), (3, 4);
+INSERT INTO relate_a_and_b (fkaid, fkbid) VALUES (1, 1), (2, 3), (3, 4);
 
 -- Combine the rows from A and B. This needs two INNER JOINs.
-SELECT a.id AS a_id, a.x, b.id AS b_id, b.y FROM a
-    INNER JOIN relate_a_and_b ON a.id = relate_a_and_b.a
-    INNER JOIN b ON b.id = relate_a_and_b.b;
+SELECT aid, x, bid as bid, y FROM a
+    INNER JOIN relate_a_and_b ON a.aid = relate_a_and_b.fkaid
+    INNER JOIN b              ON b.bid = relate_a_and_b.fkbid;
