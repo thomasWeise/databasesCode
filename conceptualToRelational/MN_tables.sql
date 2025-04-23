@@ -20,5 +20,5 @@ CREATE TABLE n (
 
 -- To table M, we add the foreign key reference constraint towards
 -- table N. This enforces the mandatory-many part of the relationship.
-ALTER TABLE m ADD CONSTRAINT m_mid_fknid_fk FOREIGN KEY (mid, fknid)
-    REFERENCES n (fkmid, nid);
+ALTER TABLE m ADD CONSTRAINT m_fknid_mid_fk FOREIGN KEY (fknid, mid)
+    REFERENCES n (nid, fkmid);
