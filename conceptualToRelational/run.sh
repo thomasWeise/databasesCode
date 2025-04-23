@@ -63,6 +63,11 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 
 "$postgres" "$exampleDir" MN_tables.sql relationships
 "$postgres" "$exampleDir" MN_insert_and_select.sql relationships
+"$postgres" "$exampleDir" MN_insert_error_1.sql relationships
+"$postgres" "$exampleDir" MN_insert_error_2.sql relationships
+"$postgres" "$exampleDir" MN_insert_error_3.sql relationships
+"$postgres" "$exampleDir" MN_insert_error_4.sql relationships
+"$postgres" "$exampleDir" MN_insert_error_5.sql relationships
 "$postgres" "$exampleDir" MN_cleanup.sql relationships
 
 "$postgres" "$exampleDir" cleanup.sql
