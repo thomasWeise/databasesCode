@@ -10,6 +10,6 @@ INSERT INTO f (y) VALUES ('AB'), ('CD'), ('EF'), ('GH');
 INSERT INTO relate_e_and_f (fkeid, fkfid) VALUES (1, 1), (1, 2), (3, 4);
 
 -- Combine the rows from E and F. This needs two INNER JOINs.
-SELECT eid, x, fid, y FROM e
-    INNER JOIN relate_e_and_f ON e.eid = relate_e_and_f.fkeid
-    INNER JOIN f              ON f.fid = relate_e_and_f.fkfid;
+SELECT eid, x, fid, y FROM relate_e_and_f
+    INNER JOIN e ON e.eid = relate_e_and_f.fkeid
+    INNER JOIN f ON f.fid = relate_e_and_f.fkfid;
