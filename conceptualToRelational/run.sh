@@ -70,4 +70,9 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 "$postgres" "$exampleDir" MN_insert_error_5.sql relationships
 "$postgres" "$exampleDir" MN_cleanup.sql relationships
 
+"$postgres" "$exampleDir" OP_tables.sql relationships
+"$postgres" "$exampleDir" OP_insert_and_select.sql relationships
+"$postgres" "$exampleDir" OP_insert_error.sql relationships
+"$postgres" "$exampleDir" OP_cleanup.sql relationships
+
 "$postgres" "$exampleDir" cleanup.sql
