@@ -1,4 +1,4 @@
-/* Insert into tables for the S->|-----|<-T relationship. */
+/* Insert into the tables for the S->|-----|<-T relationship. */
 
 -- Create a pair of new and related S and T entities.
 WITH s_id AS (SELECT NEXTVAL('sqsid') AS new_sid),
