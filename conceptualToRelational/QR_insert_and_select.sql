@@ -2,7 +2,7 @@
 
 -- Insert some rows into the table for entity type R first.
 -- We can only create rows in Q related to existing R entities.
-INSERT INTO r (y) VALUES ('AB'), ('CD'), ('EF'), ('GH'), ('IJ');
+INSERT INTO r (y) VALUES ('AB'), ('CD'), ('EF'), ('GH'), ('IJ'), ('KL');
 
 -- Insert into Q and relate_q_and_r at the same time.
 -- This creates Q entry with id 1 and relationship (1, 1).
@@ -19,8 +19,8 @@ WITH q_new AS (INSERT INTO q (x, fkrid) VALUES ('456', 4)
         SELECT qid, fkrid FROM q_new;
 
 -- Insert into Q and relate_q_and_r at the same time.
--- This creates Q entry with id 2 and relationship (3, 5).
-WITH q_new AS (INSERT INTO q (x, fkrid) VALUES ('789', 5)
+-- This creates Q entry with id 2 and relationship (3, 1).
+WITH q_new AS (INSERT INTO q (x, fkrid) VALUES ('789', 1)
         RETURNING qid, fkrid)
     INSERT INTO relate_q_and_r (fkqid, fkrid)
         SELECT qid, fkrid FROM q_new;
