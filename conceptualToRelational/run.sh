@@ -82,4 +82,8 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 "$postgres" "$exampleDir" QR_insert_error_3.sql relationships
 "$postgres" "$exampleDir" QR_cleanup.sql relationships
 
+"$postgres" "$exampleDir" ST_tables.sql relationships
+"$postgres" "$exampleDir" ST_insert_and_select.sql relationships
+"$postgres" "$exampleDir" ST_cleanup.sql relationships
+
 "$postgres" "$exampleDir" cleanup.sql

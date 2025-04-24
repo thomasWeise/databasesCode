@@ -1,4 +1,4 @@
-/* Insert into tables for E-|o-----o<-F relationship. */
+/* Inserting data into the tables for the E-|o-----o<-F relationship. */
 
 -- Insert some rows into the table for entity type E.
 INSERT INTO e (x) VALUES ('123'), ('456'), ('789'), ('101');

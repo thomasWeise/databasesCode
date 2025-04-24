@@ -1,4 +1,4 @@
-/* Insert into tables for A-|o-----o|-B relationship. */
+/* Inserting data into the tables for the A-|o-----o|-B relationship. */
 
 -- Insert some rows into the table for entity type A.
 INSERT INTO a (x) VALUES ('123'), ('456'), ('789'), ('101');

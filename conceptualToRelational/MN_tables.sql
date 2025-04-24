@@ -1,6 +1,6 @@
 /* Create the tables for a M-||-----|<-N relationship. */
 
--- The sequence for the IDs.
+-- The sequence for the primary keys of the rows in m.
 CREATE SEQUENCE sqmid AS INT;
 
 -- Table M: Each row in M is related to one or multiple rows in N.

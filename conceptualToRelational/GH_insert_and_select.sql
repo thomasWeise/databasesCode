@@ -1,4 +1,4 @@
-/* Insert into tables for G-|o-----|<-H relationship. */
+/* Inserting data into the tables for the G-|o-----|<-H relationship. */
 
 -- Insert some rows into the table for entity type H.
 -- Not specifying `g` leave the references G as NULL for now.

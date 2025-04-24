@@ -1,4 +1,4 @@
-/* Create the tables for a A-|o-----o|-B relationship. */
+/* Create the tables for an A-|o-----o|-B relationship. */
 
 -- Table A: Each row in A is related to zero or one row in B.
 CREATE TABLE a (

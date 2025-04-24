@@ -1,4 +1,4 @@
-/* Create the tables for a E-|o-----o<-F relationship. */
+/* Create the tables for an E-|o-----o<-F relationship. */
 
 -- Table E: Each row in E is related to zero or one or many rows in F.
 CREATE TABLE e (

@@ -1,4 +1,4 @@
-/* Create the tables for a O->o-----o<-P relationship. */
+/* Create the tables for an O->o-----o<-P relationship. */
 
 -- Table O: Each row in O is related to zero or one or many rows in P.
 CREATE TABLE o (

@@ -1,4 +1,4 @@
-/* Create the table for a I-||-----||-J relationship. */
+/* Create the table for an I-||-----||-J relationship. */
 
 -- Table I_J: Each row holds one entity of type I and one of type J.
 CREATE TABLE i_j (

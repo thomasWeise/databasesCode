@@ -1,4 +1,4 @@
-/* Insert into tables for Q->o-----|<-R relationship. */
+/* Inserting data into the tables for the Q->o-----|<-R relationship. */
 
 -- Insert some rows into the table for entity type R first.
 -- We can only create rows in Q related to existing R entities.

@@ -1,4 +1,4 @@
-/* Insert into tables for O->o-----o<-P relationship. */
+/* Inserting data into the tables for the O->o-----o<-P relationship. */
 
 -- Insert some rows into the table for entity type O.
 INSERT INTO o (x) VALUES ('123'), ('456'), ('789'), ('101');

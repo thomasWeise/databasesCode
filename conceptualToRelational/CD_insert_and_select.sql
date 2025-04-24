@@ -1,4 +1,4 @@
-/* Insert into tables for C-|o-----||-D relationship. */
+/* Inserting data into the tables for the C-|o-----||-D relationship. */
 
 -- Insert some rows into the table for entity type D.
 -- We first must create the D elements, because the C rows cannot
