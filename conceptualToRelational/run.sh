@@ -75,4 +75,8 @@ postgres="$exampleDir/../_scripts_/postgres.sh"
 "$postgres" "$exampleDir" OP_insert_error.sql relationships
 "$postgres" "$exampleDir" OP_cleanup.sql relationships
 
+"$postgres" "$exampleDir" QR_tables.sql relationships
+"$postgres" "$exampleDir" QR_insert_and_select.sql relationships
+"$postgres" "$exampleDir" QR_cleanup.sql relationships
+
 "$postgres" "$exampleDir" cleanup.sql

@@ -16,5 +16,5 @@ CREATE TABLE p (
 CREATE TABLE relate_o_and_p (
     fkoid INT NOT NULL REFERENCES o (oid),
     fkpid INT NOT NULL REFERENCES p (pid),
-    PRIMARY KEY (fkoid, fkpid)
+    PRIMARY KEY (fkoid, fkpid)  -- Primary key includes both columns.
 );
