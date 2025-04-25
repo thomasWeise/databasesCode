@@ -31,7 +31,7 @@ def line(seq: Iterable[Any], header: bool=False) -> str:
 
 
 print(f"\\begin{{tabular}}{{{''.join(n_fields * ['c'])}}}%")
-print(f"\\multicolumn{{{n_fields}}}{{c}}{{\\scalebox{{1.1}}{{\\textbf{{Table~\\sqlil{{{table}}}}}}}}}\\\\%")
+print(f"\\multicolumn{{{n_fields}}}{{c}}{{\\scalebox{{1.1}}{{\\textbf{{Table~\\scalebox{{1.3}}{{\\sqlil{{{table}}}}}}}}}}}\\\\%")
 print("\\hline%")
 print(line(fields, True))
 print("\\hline%")
