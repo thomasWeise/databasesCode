@@ -8,7 +8,8 @@ from psycopg.rows import dict_row
 
 connection: Final[str] = f"postgres://{argv[4]}:{argv[5]}@localhost/{argv[1]}"
 fields: Final[list[str]] = list(map(str.strip, argv[3].split(";")))
-
+n_fields: Final[int] = list.__len__(fields)
+table: Final[str] = str.strip(argv[2])
 
 def to_str(a: Any) -> str:
     """Convert value a to a string."""
@@ -29,7 +30,9 @@ def line(seq: Iterable[Any], header: bool=False) -> str:
     return "&".join(map(to_head if header else to_str, seq)) + "\\\\%"
 
 
-print(f"\\begin{{tabular}}{{{''.join(list.__len__(fields) * ['c'])}}}%")
+print(f"\\begin{{tabular}}{{{''.join(n_fields * ['c'])}}}%")
+print("\\hline%")
+print(f"\\multicolumn{{{n_fields}}}{{c}}{{table~\\sqlil{{{table}}}}}\\\\%")
 print("\\hline%")
 print(line(fields, True))
 print("\\hline%")
@@ -41,7 +44,7 @@ with (connect(connection) as conn,
     # Below, we violate the required use of LiteralString for the sake of
     # ease.
     cur.execute(cast(
-        LiteralString, "SELECT " + ", ".join(fields) + " FROM " + argv[2]))
+        LiteralString, "SELECT " + ", ".join(fields) + " FROM " + table))
 
     for record in cur:  # Iterate over the records in the cursor.
         print(line(map(record.get, fields)))
