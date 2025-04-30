@@ -22,8 +22,8 @@ postgres="$exampleDir/../../../_scripts_/postgres.sh"
 "$postgres" "$exampleDir/generated_sql" 04_public_id_type_table_5072.sql person_database
 "$postgres" "$exampleDir/generated_sql" 05_public_personal_id_table_5078.sql person_database
 "$postgres" "$exampleDir/generated_sql" 06_public_person_table_5087.sql person_database
-"$postgres" "$exampleDir/generated_sql" 07_public_person_person_id_person_id_fk_constraint_5093.sql person_database
-"$postgres" "$exampleDir/generated_sql" 08_public_personal_id_personal_id_id_type_fk_constraint_5094.sql
-"$postgres" "$exampleDir/generated_sql" 09_public_personal_id_personal_id_person_fk_constraint_5092.sql person_database
+"$postgres" "$exampleDir/generated_sql" 07_public_personal_id_personal_id_id_type_fk_constraint_5093.sql person_database
+"$postgres" "$exampleDir/generated_sql" 08_public_personal_id_personal_id_person_fk_constraint_5094.sql
+"$postgres" "$exampleDir/generated_sql" 09_public_person_person_id_person_id_fk_constraint_5092.sql person_database
 
 "$postgres" "$exampleDir" insert_and_select.sql person_database
