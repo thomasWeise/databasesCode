@@ -6,7 +6,7 @@ CREATE TABLE public.name (
 	full_name varchar(255) NOT NULL,
 	salutation varchar(255),
 	is_official boolean NOT NULL DEFAULT True,
-	start_date date NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	start_date date NOT NULL DEFAULT CURRENT_DATE,
 	end_date date,
 	CONSTRAINT name_id_pk PRIMARY KEY (id)
 );

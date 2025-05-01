@@ -52,7 +52,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="is_official" not-null="true" default-value="True">
 		<type name="boolean" length="0"/>
 	</column>
-	<column name="start_date" not-null="true" default-value="CURRENT_TIMESTAMP">
+	<column name="start_date" not-null="true" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
 	</column>
 	<column name="end_date">
@@ -127,7 +127,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 identity-type="BY DEFAULT">
 		<type name="integer" length="0"/>
 	</column>
-	<column name="id_type">
+	<column name="id_type" not-null="true">
 		<type name="integer" length="0"/>
 	</column>
 	<column name="person" not-null="true">
@@ -192,7 +192,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <relationship name="belongs_to_type" type="relfk" layers="0"
 	 src-table="public.has_id"
 	 dst-table="public.id_type" reference-fk="has_id_id_type_fk"
-	 src-required="false" dst-required="false">
+	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
 		<position x="10.8795" y="14.6772"/>
 	</label>
