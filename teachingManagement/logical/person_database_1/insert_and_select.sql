@@ -1,8 +1,8 @@
-/** Insert some rows into the person database. */
+/** Insert some data into the tables of our person database. */
 
--- Create two ID types.
+-- Create two ID types: Chinese national ID and mobile phone numbers.
 INSERT INTO id_type (name, validation_regexp) VALUES
-    ('national ID', '^\d{6}((19)|(20))\d{9}[0-9X]$'),
+    ('national ID',         '^\d{6}((19)|(20))\d{9}[0-9X]$'),
     ('mobile phone number', '^\d{11}$');
 
 -- Insert a new person record and a new ID record at the same time.
@@ -14,8 +14,8 @@ WITH pers_id AS (SELECT NEXTVAL('person_id_counter') AS person),
      INSERT INTO person (id, person_id) SELECT person, id FROM new_pers_id;
 
 -- Insert a new personal ID for an existing person record.
-INSERT INTO personal_id (id_type, person, value, valid_from)
-        VALUES (2, 1, '1234567890', '2023-02-07');
+INSERT INTO has_id (id_type, person, value, valid_from) VALUES
+        (2, 1, '1234567890', '2023-02-07');
 
 -- Insert a new person record and a new ID record at the same time.
 WITH pers_id AS (SELECT NEXTVAL('person_id_counter') AS person),
