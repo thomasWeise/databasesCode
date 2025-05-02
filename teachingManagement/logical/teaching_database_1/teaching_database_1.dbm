@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.1.0-beta1" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="6"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="teaching_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" name-color="#000000" sql-disabled="true">
+</schema>
+
+<table name="student" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="20" y="40"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="student_id_pk" type="pk-constr" table="public.student">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="professor" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="800" y="40"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="professor_id_pl" type="pk-constr" table="public.professor">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="module" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="560" y="340"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="module_id_pl" type="pk-constr" table="public.module">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="course" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="520" y="40"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="professor" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="module" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="semester" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="course_id_pk" type="pk-constr" table="public.course">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="enrolls" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="260" y="40"/>
+	<column name="student" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="course" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="enrolls_pk" type="pk-constr" table="public.enrolls">
+		<columns names="student,course" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="course_professor_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.professor" table="public.course">
+	<columns names="professor" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="course_module_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.module" table="public.course">
+	<columns names="module" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="enrolls_student_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.student" table="public.enrolls">
+	<columns names="student" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="enrolls_course_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.course" table="public.enrolls">
+	<columns names="course" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="teaches" type="relfk" layers="0"
+	 src-table="public.course"
+	 dst-table="public.professor" reference-fk="course_professor_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="module" type="relfk" layers="0"
+	 src-table="public.course"
+	 dst-table="public.module" reference-fk="course_module_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="114.91" y="-29.953"/>
+	</label>
+</relationship>
+
+<relationship name="joins" type="relfk" layers="0"
+	 src-table="public.enrolls"
+	 dst-table="public.student" reference-fk="enrolls_student_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="course" type="relfk" layers="0"
+	 src-table="public.enrolls"
+	 dst-table="public.course" reference-fk="enrolls_course_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-8.5316" y="7.09833"/>
+	</label>
+</relationship>
+
+</dbmodel>
