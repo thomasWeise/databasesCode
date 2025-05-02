@@ -1,4 +1,4 @@
-/* Create a view showing the sales information */
+/* Create a view showing the sales information. */
 
 -- We combine the three tables customer, product, and demand.
 -- Basically, for each row in 'demand', we find the corresponding rows

@@ -30,3 +30,4 @@ postgres="$exampleDir/../../../_scripts_/postgres.sh"
 
 "$postgres" "$exampleDir" insert.sql person_database
 "$postgres" "$exampleDir" select.sql person_database
+"$postgres" "$exampleDir" view_person_age.sql person_database
