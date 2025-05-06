@@ -24,7 +24,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 identity-type="BY DEFAULT">
 		<type name="integer" length="0"/>
 	</column>
-	<column name="address" not-null="true">
+	<column name="full_address" not-null="true">
 		<type name="varchar" length="255"/>
 	</column>
 	<constraint name="address_id_pk" type="pk-constr" table="public.address">

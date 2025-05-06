@@ -19,6 +19,6 @@ postgres="$exampleDir/../../../_scripts_/postgres.sh"
 
 "$postgres" "$exampleDir/generated_sql" 01_anomalies_database_2001.sql
 "$postgres" "$exampleDir/generated_sql" 03_public_address_table_5071.sql anomalies
-"$postgres" "$exampleDir/generated_sql" 04_public_student_table_5087.sql anomalies
-"$postgres" "$exampleDir/generated_sql" 05_public_student_student_address_fk_constraint_5097.sql anomalies
+"$postgres" "$exampleDir/generated_sql" 04_public_student_table_5075.sql anomalies
+"$postgres" "$exampleDir/generated_sql" 05_public_student_student_address_fk_constraint_5080.sql anomalies
 "$postgres" "$exampleDir" insert.sql anomalies

@@ -1,7 +1,7 @@
 /** Insert data into the database. */
 
 -- Insert several address records.
-INSERT INTO address (address) VALUES
+INSERT INTO address (full_address) VALUES
     ('Hefei University, Hefei 230601 Jinkaiqu, Hefei, Anhui, China'),
     ('Am Rathaus 1, 09111 Zentrum, Chemnitz, Sachsen, Deutschland'),
     ('Canal Street 4, Chinatown, New York, NY, USA'),
