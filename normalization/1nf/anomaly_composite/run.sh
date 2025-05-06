@@ -22,3 +22,4 @@ postgres="$exampleDir/../../../_scripts_/postgres.sh"
 "$postgres" "$exampleDir/generated_sql" 04_public_student_table_5075.sql anomalies
 "$postgres" "$exampleDir/generated_sql" 05_public_student_student_address_fk_constraint_5080.sql anomalies
 "$postgres" "$exampleDir" insert.sql anomalies
+"$postgres" "$exampleDir" select.sql anomalies
