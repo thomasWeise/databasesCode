@@ -6,5 +6,4 @@ SELECT name, country || ', ' || COALESCE(province || ', ', '')
                      || postal_code || ' ' || city || ', '
                      || street_address AS address FROM student
     INNER JOIN address ON student.address = address.id
-    WHERE (country ILIKE '%china%') OR (country ILIKE '%PRC%')
-                                    OR (country ILIKE '%P.R.C.%');
+    WHERE country ILIKE ANY(ARRAY['%china%', '%PRC%', '%P.R.C.%']);
