@@ -24,3 +24,4 @@ postgres="$exampleDir/../../../_scripts_/postgres.sh"
 "$postgres" "$exampleDir" delete.sql violation
 "$postgres" "$exampleDir" select_buildings_2.sql violation
 "$postgres" "$exampleDir" update.sql violation
+"$postgres" "$exampleDir" update2.sql violation
