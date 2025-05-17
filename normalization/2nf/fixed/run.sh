@@ -17,9 +17,11 @@ postgres="$exampleDir/../../../_scripts_/postgres.sh"
 
 "$exampleDir/cleanup.sh"
 
-"$postgres" "$exampleDir/generated_sql" 01_violation_database_2001.sql
-"$postgres" "$exampleDir/generated_sql" 03_public_building_room_table_5071.sql violation
-"$postgres" "$exampleDir" insert.sql violation
-"$postgres" "$exampleDir" delete.sql violation
-"$postgres" "$exampleDir" update.sql violation
-"$postgres" "$exampleDir" update2.sql violation
+"$postgres" "$exampleDir/generated_sql" 01_fixed_database_2001.sql
+"$postgres" "$exampleDir/generated_sql" 03_public_room_table_5071.sql fixed
+"$postgres" "$exampleDir/generated_sql" 04_public_building_table_5080.sql fixed
+"$postgres" "$exampleDir/generated_sql" 05_public_room_building_fk_constraint_5099.sql fixed
+"$postgres" "$exampleDir" insert.sql fixed
+"$postgres" "$exampleDir" delete.sql fixed
+"$postgres" "$exampleDir" update.sql fixed
+"$postgres" "$exampleDir" update2.sql fixed

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Run all the scripts of the logical model example.
+# Clean up the example.
 
 # strict error handling
 set -o pipefail  # trace ERR through pipes
@@ -15,11 +15,4 @@ cd "$exampleDir"
 #: the postgre sql script
 postgres="$exampleDir/../../../_scripts_/postgres.sh"
 
-"$exampleDir/cleanup.sh"
-
-"$postgres" "$exampleDir/generated_sql" 01_violation_database_2001.sql
-"$postgres" "$exampleDir/generated_sql" 03_public_building_room_table_5071.sql violation
-"$postgres" "$exampleDir" insert.sql violation
-"$postgres" "$exampleDir" delete.sql violation
-"$postgres" "$exampleDir" update.sql violation
-"$postgres" "$exampleDir" update2.sql violation
+"$postgres" "$exampleDir" cleanup.sql

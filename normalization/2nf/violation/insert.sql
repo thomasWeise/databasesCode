@@ -15,7 +15,7 @@ INSERT INTO building_room (building_number, room_number, building_name,
      'Office 1', 10, 'South Campus 2'),
     ('53', '904b', 'Comprehensive Experimental Building',
      'Cluster Room', 3, 'South Campus 2'),
-    ('7', '200', 'Main Teaching Building', 'Auditorium', 30,
+    ('7', '200', 'Main Teaching Building', 'Auditorium', 120,
      'South Campus 1'),
     ('36', '106', 'CS Teaching Building', 'Lecture Room 2', 80,
      'South Campus 2');
