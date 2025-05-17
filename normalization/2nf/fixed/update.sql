@@ -17,7 +17,7 @@ SELECT room.building_number, room_number FROM room
 UPDATE building SET address = 'South Campus 2'
     WHERE address = 'South Campus II' RETURNING building_number;
 
--- The query now works.
+-- This query now also works, because the addresses are now consistent.
 SELECT room.building_number, room_number FROM room
     INNER JOIN building ON
         room.building_number = building.building_number

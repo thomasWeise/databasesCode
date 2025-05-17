@@ -13,6 +13,6 @@ SELECT building_number, room_number FROM building_room
 UPDATE building_room SET address = 'South Campus 2'
     WHERE address = 'South Campus II' RETURNING building_number;
 
--- The query now works.
+-- This query now also works, because the addresses are now consistent.
 SELECT building_number, room_number FROM building_room
     WHERE address = 'South Campus 2';
