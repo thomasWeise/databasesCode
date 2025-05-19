@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="1.1.0-beta1" use-changelog="false" last-position="0,68" last-zoom="1" max-obj-count="4"
+<dbmodel pgmodeler-ver="1.1.0-beta1" use-changelog="false" last-position="0,47" last-zoom="1" max-obj-count="4"
 	 default-schema="public" default-owner="postgres"
 	 layers="Default layer"
 	 active-layers="0"
@@ -24,7 +24,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="id_type" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="640" y="140"/>
+	<position x="60" y="360"/>
 	<column name="id" not-null="true"
 	 identity-type="ALWAYS">
 		<type name="integer" length="0"/>
@@ -46,7 +46,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="personal_id" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="340" y="100"/>
+	<position x="660" y="100"/>
 	<column name="id" not-null="true"
 	 identity-type="BY DEFAULT">
 		<type name="integer" length="0"/>
@@ -112,7 +112,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.id_type" reference-fk="personal_id_id_type_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="-5.9066" y="6.20084"/>
+		<position x="41.7916" y="19.5772"/>
 	</label>
 </relationship>
 
@@ -125,7 +125,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<position x="220" y="260"/>
 	</line>
 	<label ref-type="name-label">
-		<position x="38.7792" y="15.2918"/>
+		<position x="215.904" y="35.778"/>
 	</label>
 </relationship>
 

@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="1.1.0-beta1" use-changelog="false" last-position="0,3" last-zoom="1" max-obj-count="4"
+<dbmodel pgmodeler-ver="1.1.0-beta1" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="4"
 	 default-schema="public" default-owner="postgres"
 	 layers="Default layer"
 	 active-layers="0"
@@ -52,7 +52,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="mobile" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="420" y="120"/>
+	<position x="580" y="100"/>
 	<column name="id" not-null="true"
 	 identity-type="BY DEFAULT">
 		<type name="integer" length="0"/>

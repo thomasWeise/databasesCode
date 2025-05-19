@@ -19,7 +19,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="student" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="20" y="40"/>
+	<position x="80" y="340"/>
 	<column name="id" not-null="true"
 	 identity-type="BY DEFAULT">
 		<type name="integer" length="0"/>
@@ -35,7 +35,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="professor" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="800" y="40"/>
+	<position x="860" y="100"/>
 	<column name="id" not-null="true"
 	 identity-type="BY DEFAULT">
 		<type name="integer" length="0"/>
@@ -51,7 +51,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="module" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="560" y="340"/>
+	<position x="480" y="340"/>
 	<column name="id" not-null="true"
 	 identity-type="BY DEFAULT">
 		<type name="integer" length="0"/>
@@ -67,7 +67,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="course" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="520" y="40"/>
+	<position x="460" y="40"/>
 	<column name="id" not-null="true"
 	 identity-type="BY DEFAULT">
 		<type name="integer" length="0"/>
@@ -89,7 +89,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="enrolls" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="260" y="40"/>
+	<position x="60" y="40"/>
 	<column name="student" not-null="true">
 		<type name="integer" length="0"/>
 	</column>
@@ -139,7 +139,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.module" reference-fk="course_module_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="114.91" y="-29.953"/>
+		<position x="45.0671" y="-39.953"/>
 	</label>
 </relationship>
 
@@ -148,7 +148,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.student" reference-fk="enrolls_student_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="0" y="0"/>
+		<position x="-51.3014" y="-27.353"/>
 	</label>
 </relationship>
 
