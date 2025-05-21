@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="1.1.0-beta1" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="6"
+<dbmodel pgmodeler-ver="1.1.0-beta1" use-changelog="false" last-position="319,0" last-zoom="1.45" max-obj-count="6"
 	 default-schema="public" default-owner="postgres"
 	 layers="Default layer"
 	 active-layers="0"
@@ -176,7 +176,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.person" reference-fk="name_person_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="-11.6019" y="-71.9016"/>
+		<position x="-5.49059" y="-81.9487"/>
 	</label>
 </relationship>
 
@@ -185,7 +185,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.person" reference-fk="address_person_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="-27.8109" y="13.207"/>
+		<position x="12.1891" y="-86.793"/>
 	</label>
 </relationship>
 
@@ -194,7 +194,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.id_type" reference-fk="has_id_id_type_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="10.8795" y="14.6772"/>
+		<position x="11.7916" y="-74.1056"/>
 	</label>
 </relationship>
 
@@ -203,7 +203,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.person" reference-fk="has_id_person_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="-30.6931" y="-33.753"/>
+		<position x="44.6984" y="-43.753"/>
 	</label>
 </relationship>
 
