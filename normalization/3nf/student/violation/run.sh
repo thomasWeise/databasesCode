@@ -17,7 +17,7 @@ postgres="$exampleDir/../../../../_scripts_/postgres.sh"
 
 "$exampleDir/cleanup.sh"
 
-"$postgres" "$exampleDir/generated_sql" 01_violation_database_2001.sql
-"$postgres" "$exampleDir/generated_sql" 03_public_student_table_5071.sql violation
+"$postgres" "$exampleDir/generated_sql" 01_violation_database_2002.sql
+"$postgres" "$exampleDir/generated_sql" 03_public_student_table_5103.sql violation
 "$postgres" "$exampleDir" insert.sql violation
 "$postgres" "$exampleDir" update.sql violation

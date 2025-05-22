@@ -19,8 +19,8 @@ postgres="$exampleDir/../../../../_scripts_/postgres.sh"
 
 "$postgres" "$exampleDir/generated_sql" 01_fixed_database_2001.sql
 "$postgres" "$exampleDir/generated_sql" 03_public_student_table_5071.sql fixed
-"$postgres" "$exampleDir/generated_sql" 04_public_parent_table_5079.sql fixed
-"$postgres" "$exampleDir/generated_sql" 05_public_student_parent_mobile_fk_constraint_5090.sql fixed
+"$postgres" "$exampleDir/generated_sql" 04_public_parent_table_5077.sql fixed
+"$postgres" "$exampleDir/generated_sql" 05_public_student_parent_mobile_fk_constraint_5081.sql fixed
 "$postgres" "$exampleDir" insert.sql fixed
 "$postgres" "$exampleDir" select.sql fixed
 "$postgres" "$exampleDir" update.sql fixed
