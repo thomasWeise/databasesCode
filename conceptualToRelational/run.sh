@@ -31,7 +31,7 @@ source "$exampleDir/../.venv/bin/activate"
 "$make_table" "relationships" "relate_a_and_b" "fkaid;fkbid"
 "$postgres" "$exampleDir" AB_1_insert_error_1.sql relationships
 "$postgres" "$exampleDir" AB_1_insert_error_2.sql relationships
-"$postgres" "$exampleDir" AB_1_cleanup.sql relationships
+"$postgres" "$exampleDir" AB_cleanup.sql relationships
 
 "$postgres" "$exampleDir" AB_2_tables.sql relationships
 "$postgres" "$exampleDir" AB_2_insert_and_select.sql relationships
@@ -39,7 +39,7 @@ source "$exampleDir/../.venv/bin/activate"
 "$make_table" "relationships" "b" "bid;y"
 "$postgres" "$exampleDir" AB_2_insert_error_1_impossible.sql relationships
 "$postgres" "$exampleDir" AB_2_insert_error_2.sql relationships
-"$postgres" "$exampleDir" AB_2_cleanup.sql relationships
+"$postgres" "$exampleDir" AB_cleanup.sql relationships
 
 "$postgres" "$exampleDir" CD_tables.sql relationships
 "$postgres" "$exampleDir" CD_insert_and_select.sql relationships
@@ -54,13 +54,13 @@ source "$exampleDir/../.venv/bin/activate"
 "$make_table" "relationships" "f" "fid;y"
 "$make_table" "relationships" "relate_e_and_f" "fkeid;fkfid"
 "$postgres" "$exampleDir" EF_1_insert_error.sql relationships
-"$postgres" "$exampleDir" EF_1_cleanup.sql relationships
+"$postgres" "$exampleDir" EF_cleanup.sql relationships
 
 "$postgres" "$exampleDir" EF_2_tables.sql relationships
 "$postgres" "$exampleDir" EF_2_insert_and_select.sql relationships
 "$make_table" "relationships" "e" "eid;x"
 "$make_table" "relationships" "f" "fid;fkeid;y"
-"$postgres" "$exampleDir" EF_2_cleanup.sql relationships
+"$postgres" "$exampleDir" EF_cleanup.sql relationships
 
 "$postgres" "$exampleDir" GH_tables.sql relationships
 "$postgres" "$exampleDir" GH_insert_and_select.sql relationships
