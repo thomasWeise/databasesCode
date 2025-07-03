@@ -1,5 +1,4 @@
 /* Extract information from the table customer. */
 
--- Count how many domestic and foreign customers we have.
-SELECT COUNT(*), address ILIKE '%china%' as domestic FROM customer
-    GROUP BY domestic;
+-- Which customers are domestic, i.e., live in China?
+SELECT name, address ILIKE '%china%' as domestic FROM customer;
