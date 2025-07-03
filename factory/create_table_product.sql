@@ -12,9 +12,9 @@ CREATE TABLE product (
     name VARCHAR(100) NOT NULL UNIQUE,  -- must exist, must be unique
     price DECIMAL(10, 2) NOT NULL,  -- price (RMB): 10 digits, 2 after .
     weight INT NOT NULL,  -- the weight of the product, in grams
-    width INT NOT NULL,  -- the width of the product, in mm
+    width INT NOT NULL,   -- the width of the product, in mm
     height INT NOT NULL,  -- the height of the product, in mm
-    depth INT NOT NULL  -- the depth of the product, in mm
+    depth INT NOT NULL    -- the depth of the product, in mm
 );
 
 -- List all tables of the user 'boss' in database 'factory'
