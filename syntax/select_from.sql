@@ -13,3 +13,6 @@ SELECT columnName FROM tableName;
 -- This command here selects N columns from the table.
 -- The names of the columns are separated by commas (",").
 SELECT columnName1, columnName2, ..., columnNameN FROM tableName;
+
+-- Select all the values from all the columns of a given table.
+SELECT * FROM tableName;
