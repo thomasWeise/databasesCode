@@ -13,7 +13,7 @@ SELECT Table_1.x, Table_2.y FROM Table_1
 --   ---+-------     ---+-----     -------+--------
 --    1 | Hello       1 | A         Hello | A
 --    2 | World       2 | B         World | B
---    3 | From        2 | C         World | C
+--    3 | from        2 | C         World | C
 --    4 | HFUU        4 | D         World | E
 --                    2 | E         from  | <NULL>
 --                                  HFUU  | D
