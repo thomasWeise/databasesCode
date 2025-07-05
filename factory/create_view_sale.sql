@@ -9,13 +9,13 @@
 -- and refer to it "customer_name".
 -- We extract the name of the product and refer to it as "product_name".
 -- We also print the "amount" from each customer demand and the price.
--- We also print when the purchase as made
+-- We also print when the purchase as made.
 CREATE VIEW sale AS
     SELECT customer.name || ', ' || customer.phone AS customer_name,
-           product.name AS product_name, product.price AS price,
-           demand.amount AS amount, demand.ordered as ordered
+           product.name  AS product_name, product.price  AS price,
+           demand.amount AS amount,       demand.ordered AS ordered
     FROM demand INNER JOIN customer ON (customer.id = demand.customer)
-                INNER JOIN product ON (product.id = demand.product)
+                INNER JOIN product  ON (product.id  = demand.product)
     ORDER BY customer_name, ordered, product_name, price, amount;
 
 -- We can use the view as if it was a table!
