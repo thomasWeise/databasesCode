@@ -20,4 +20,4 @@
 UPDATE tableName
     SET column_1 = expression_1, column_2 = expression_2, ...
     WHERE <condition to select rows that should be changed>
-    RETURNING *; -- optional / postgresql: get data from affected rows
+    RETURNING *; -- optional/PostgreSQL: Daten geänderter Zeilen holen
