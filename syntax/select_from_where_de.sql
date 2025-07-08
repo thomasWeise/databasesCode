@@ -1,4 +1,4 @@
--- Obtain the values of rows meeting the specified condition(s).
+-- Diese Anweisung wählt nur die Zeilen aus, die die Bedingung erfüllen.
 SELECT columnName1, columnName2, ..., columnNameN
     FROM tableName
     WHERE condition;

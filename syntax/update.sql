@@ -14,8 +14,8 @@
 -- clause. The change is then only applied to the rows for which the
 -- 'WHERE' condition evaluates to True.
 
--- Some systems, like PostgreSQL, support a RETURNING statement, which
--- is similar to doing a SELECT after the update that only has the
+-- Some systems, like PostgreSQL, support a 'RETURNING' statement, which
+-- is similar to doing a 'SELECT' after the update that only has the
 -- affected rows as input.
 UPDATE tableName
     SET column_1 = expression_1, column_2 = expression_2, ...

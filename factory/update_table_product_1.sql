@@ -1,4 +1,4 @@
-/** Get all the products in a shoe box */
+/** Get all the products that ship in shoe boxes. */
 
 -- We know what product comes in a shoe box by the box dimensions of
 -- 350mm * 250mm * 130mm. If it has this size, it's a shoe box.

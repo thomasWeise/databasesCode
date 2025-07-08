@@ -1,7 +1,7 @@
 -- The SQL syntax for inserting / appending data into a table.
 --
 --             tableName: the name of the table
---               columnI: the name of columnI, as used when the
+--               columnI: the name of column I, as used when the
 --                        table was created
 -- value for rowJcolumnK: the value for column K of the the J-th
 --                        inserted row
