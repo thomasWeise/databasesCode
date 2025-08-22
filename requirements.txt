@@ -3,4 +3,4 @@
 #
 
 # The python module for connecting to PostgreSQL databases.
-psycopg == 3.2.4
+psycopg == 3.2.9
