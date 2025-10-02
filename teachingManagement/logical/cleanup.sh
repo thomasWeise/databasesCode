@@ -10,13 +10,14 @@ set -o errexit   # set -e : exit the script if any statement returns a non-true 
 
 echo "$(date +'%0Y-%0m-%0d %0R:%0S'): Welcome to the logical layer of the teaching management cleanup script."
 
-# Go to the directory where this script is located.
-cd "$(readlink -f "$(dirname "$0")")"
+# The directory where the example is located.
+exampleDir="$(readlink -f "$(dirname "$0")")"
+cd "$exampleDir"
 
-./person_database_1/cleanup.sh
-./person_database_2/cleanup.sh
-./student_database_1/cleanup.sh
-./student_database_2/cleanup.sh
-./teaching_database_1/cleanup.sh
+"$exampleDir/person_database_1/cleanup.sh"
+"$exampleDir/person_database_2/cleanup.sh"
+"$exampleDir/student_database_1/cleanup.sh"
+"$exampleDir/student_database_2/cleanup.sh"
+"$exampleDir/teaching_database_1/cleanup.sh"
 
 echo "$(date +'%0Y-%0m-%0d %0R:%0S'): We have finished the logical layer of the teaching management cleanup script."

@@ -11,7 +11,8 @@ set -o errexit   # set -e : exit the script if any statement returns a non-true 
 echo "$(date +'%0Y-%0m-%0d %0R:%0S'): Welcome to the 2nf cleanup script."
 
 # Go to the directory where this script is located.
-cd "$(readlink -f "$(dirname "$0")")"
+exampleDir="$(readlink -f "$(dirname "$0")")"
+cd "$exampleDir"
 
-./rooms/cleanup.sh
+"$exampleDir/rooms/cleanup.sh"
 echo "$(date +'%0Y-%0m-%0d %0R:%0S'): Finished the 2nf cleanup script."

@@ -10,12 +10,13 @@ set -o errexit   # set -e : exit the script if any statement returns a non-true 
 
 echo "$(date +'%0Y-%0m-%0d %0R:%0S'): Welcome to the global cleanup script."
 
-# Go to the directory where this script is located.
-cd "$(readlink -f "$(dirname "$0")")"
+# The directory where the example is located.
+exampleDir="$(readlink -f "$(dirname "$0")")"
+cd "$exampleDir"
 
-./factory/cleanup.sh
-./conceptualToRelational/cleanup.sh
-./normalization/cleanup.sh
-./teachingManagement/cleanup.sh
+"$exampleDir/factory/cleanup.sh"
+"$exampleDir/conceptualToRelational/cleanup.sh"
+"$exampleDir/normalization/cleanup.sh"
+"$exampleDir/teachingManagement/cleanup.sh"
 
 echo "$(date +'%0Y-%0m-%0d %0R:%0S'): We have finished the global cleanup script."
