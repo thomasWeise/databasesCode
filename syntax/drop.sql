@@ -3,7 +3,7 @@
  * We can only delete elements that are not referenced by other
  * elements. Users can only be deleted if they do not own anything
  * anymore. Tables can only be deleted if they are not part of any
- * foreign key constraint. And so on.
+ * foreign key constraint, not used in any view, etc. And so on.
  */
 
 -- Delete table "table_name": Fails if the table does not exist.
