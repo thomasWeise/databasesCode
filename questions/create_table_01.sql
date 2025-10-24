@@ -3,5 +3,5 @@ CREATE TABLE food (
     name          VARCHAR(100)   NOT NULL UNIQUE,
     is_vegetarian BOOLEAN        NOT NULL,
     price         DECIMAL(10, 2) NOT NULL,
-    CONSTRAINT price_ok  CHECK (price > 0)
+    CONSTRAINT price_ok CHECK (price > 0)
 );
