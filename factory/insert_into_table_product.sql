@@ -1,7 +1,7 @@
 /* Store some data into the table 'product'. */
 
 -- Print all the contents from table 'product': Nothing.
-SELECT * from product;
+SELECT * FROM product;
 
 -- Insert 11 products into our table.
 INSERT INTO product (name, price, weight, width, height, depth)
@@ -18,4 +18,4 @@ VALUES ('Shoe, Size 36', 150.99, 1300, 350, 250, 130),
        ('Large Purse',   150,    1500, 600, 300, 250);
 
 -- Now there are 11 rows.
-SELECT * from product;
+SELECT * FROM product;

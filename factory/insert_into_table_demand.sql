@@ -1,7 +1,7 @@
 /* Store some data into the table 'demand'. */
 
 -- Print all the contents from table 'demand': Nothing.
-SELECT * from demand;
+SELECT * FROM demand;
 
 -- Insert 8 orders into our table.
 INSERT INTO demand (customer, product, amount, ordered)
@@ -11,4 +11,4 @@ VALUES (1,  7, 12, '2024-11-21'), (2, 3, 2, '2024-12-09'),
        (3, 11, 10, '2025-01-16'), (2, 3, 6, '2025-02-05');
 
 -- Now there are 8 rows.
-SELECT * from demand;
+SELECT * FROM demand;

@@ -19,4 +19,4 @@ CREATE VIEW sale AS
     ORDER BY customer_name, ordered, product_name, price, amount;
 
 -- We can use the view as if it was a table!
-SELECT * from sale;
+SELECT * FROM sale;
