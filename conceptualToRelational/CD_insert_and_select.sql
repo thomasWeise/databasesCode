@@ -3,7 +3,7 @@
 -- Insert some rows into the table for entity type D.
 -- We first must create the D elements, because the C rows cannot
 -- exist without referencing one row in D each.
-INSERT INTO d (y) VALUES ('AB'), ('CD'), ('EF'), ('GH');
+INSERT INTO d (y) VALUES ('AB'), ('CD'), ('EF'), ('GH'), ('IJ');
 
 -- Insert some rows into the table for entity type C.
 INSERT INTO c (fkdid, x) VALUES (1, '123'), (3, '456'), (4, '789'),
