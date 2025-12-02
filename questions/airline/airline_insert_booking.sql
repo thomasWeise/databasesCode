@@ -1,5 +1,5 @@
 -- Insert into the booking table.
-INSERT INTO passenger (flight_date, passenger, class, price)
+INSERT INTO booking (flight_date, passenger, class, price)
 VALUES  ( 1, 2, 2,  300.00),  ( 2, 5, 1,  600.00),  ( 3, 4, 1, 1233.00),
         ( 4, 7, 1, 2300.00),  ( 5, 1, 2, 1734.00),  ( 6, 2, 2,  925.00),
         ( 7, 3, 2,  212.00),  ( 8, 4, 1,  566.00),  ( 9, 6, 1, 2451.00),
