@@ -5,5 +5,5 @@ CREATE TABLE pilot (
     flight_hours  INT           NOT NULL,
     qualification VARCHAR(30)   NOT NULL,
     date_of_birth DATE          NOT NULL,
-    CONSTRAINT flight_hours_ok  CHECK (flight_hours > 100),
+    CONSTRAINT flight_hours_ok  CHECK (flight_hours > 100)
 );
