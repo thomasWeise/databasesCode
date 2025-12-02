@@ -7,5 +7,5 @@ CREATE TABLE flight (
     duration         INTERVAL      NOT NULL,
     CONSTRAINT duration_ok   CHECK (duration > '10 minutes'),
     CONSTRAINT flight_num_ok CHECK (flight_number ~ '^[A-Z]+\d{1,5}$'),
-    CONSTRAINT airports_ok   CHECK (dest_airport != start_airport),
+    CONSTRAINT airports_ok   CHECK (dest_airport != start_airport)
 );
