@@ -1,3 +1,3 @@
-SELECT id, name, flight_hrs
+SELECT id, name, flight_hours
     FROM pilot
-    WHERE qualification = 'captain';
+    WHERE qualification = 'Captain';

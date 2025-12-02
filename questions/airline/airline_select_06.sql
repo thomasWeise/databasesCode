@@ -1,2 +1,2 @@
 SELECT name FROM pilot
-    WHERE qualification != 'chiefpilot' AND (flight_hrs > 1500);
+    WHERE (qualification != 'Chief Pilot') AND (flight_hours > 500);

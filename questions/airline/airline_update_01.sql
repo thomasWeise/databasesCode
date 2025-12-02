@@ -1,3 +1,3 @@
 UPDATE flight
 SET duration = duration + '1 hour'
-WHERE id = 15;
+WHERE flight_number = 'XU489';

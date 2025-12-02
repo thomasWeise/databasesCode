@@ -1,2 +1,2 @@
 SELECT name, address FROM passenger
-    WHERE address LIKE '%Hefei%';
+    WHERE address ILIKE '%Hefei%';

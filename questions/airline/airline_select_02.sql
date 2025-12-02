@@ -1,2 +1,2 @@
-SELECT DISTINCT start, destination, duration
+SELECT DISTINCT start_airport, dest_airport, duration
     FROM flight;

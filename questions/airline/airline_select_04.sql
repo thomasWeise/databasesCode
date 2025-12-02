@@ -1,2 +1,2 @@
-SELECT name, birthday FROM pilot
-    WHERE name LIKE 'Bibbo %';
+SELECT name, date_of_birth FROM pilot
+    WHERE name LIKE '% Bobbo';

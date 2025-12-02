@@ -1,1 +1,1 @@
-DELETE FROM flight WHERE id = 431;
+DELETE FROM booking WHERE id = 11;
