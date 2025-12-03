@@ -26,3 +26,13 @@ postgres="$exampleDir/../../_scripts_/postgres.sh"
 "$postgres" "$exampleDir" airline_table_passenger.sql airline
 "$postgres" "$exampleDir" airline_table_flight_date.sql airline
 "$postgres" "$exampleDir" airline_table_booking.sql airline
+
+"$postgres" "$exampleDir" airline_insert_airplane_type.sql airline
+"$postgres" "$exampleDir" airline_insert_airplane.sql airline
+"$postgres" "$exampleDir" airline_insert_flight.sql airline
+"$postgres" "$exampleDir" airline_insert_pilot.sql airline
+"$postgres" "$exampleDir" airline_insert_passenger.sql airline
+"$postgres" "$exampleDir" airline_insert_flight_date.sql airline
+"$postgres" "$exampleDir" airline_insert_booking.sql airline
+
+"$postgres" "$exampleDir" airline_join_05.sql airline

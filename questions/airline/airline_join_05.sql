@@ -8,4 +8,4 @@ INNER JOIN pilot         ON pilot.id             = flight_date.pilot
 INNER JOIN airplane      ON flight_date.airplane = airplane.tail_number
 INNER JOIN airplane_type ON airplane_type.id     = airplane.airplane_type
 INNER JOIN flight        ON flight.flight_number = flight_date.flight
-ORDER BY start_date, start_time, flight_number, start_airport;
+ORDER BY start_date, start_time, flight_number, start_airport, passenger;
