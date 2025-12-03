@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.1.0-beta1" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="8"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="airline" encoding="UTF8" lc-collate="en_US.UTF-8" lc-ctype="en_US.UTF-8" is-template="false" allow-conns="true">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" layers="0" rect-visible="true" fill-color="#e1e1e1" name-color="#000000" sql-disabled="true" faded-out="true">
+</schema>
+
+<table name="airplane_type" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="120" y="60"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="name">
+		<type name="character varying" length="255"/>
+	</column>
+	<column name="speed">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="airplane_type_pkey" type="pk-constr" table="public.airplane_type">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="airplane_type_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1" sql-disabled="true">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="airplane" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="100" y="320"/>
+	<column name="tail_number" not-null="true">
+		<type name="character varying" length="10"/>
+	</column>
+	<column name="airplane_type" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="tail_number_ok" type="ck-constr" table="public.airplane">
+			<expression> <![CDATA[((tail_number)::text ~ '^[A-Z]+-\d{2,8}$'::text)]]> </expression>
+	</constraint>
+	<constraint name="airplane_pkey" type="pk-constr" table="public.airplane">
+		<columns names="tail_number" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="flight" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="500" y="60"/>
+	<column name="flight_number" not-null="true">
+		<type name="character varying" length="8"/>
+	</column>
+	<column name="start_airport" not-null="true">
+		<type name="character varying" length="20"/>
+	</column>
+	<column name="start_time" not-null="true">
+		<type name="time" length="0"/>
+	</column>
+	<column name="dest_airport" not-null="true">
+		<type name="character varying" length="20"/>
+	</column>
+	<column name="duration" not-null="true">
+		<type name="interval" length="0"/>
+	</column>
+	<constraint name="duration_ok" type="ck-constr" table="public.flight">
+			<expression> <![CDATA[(duration > '00:10:00'::interval)]]> </expression>
+	</constraint>
+	<constraint name="flight_num_ok" type="ck-constr" table="public.flight">
+			<expression> <![CDATA[((flight_number)::text ~ '^[A-Z]+\d{1,5}$'::text)]]> </expression>
+	</constraint>
+	<constraint name="airports_ok" type="ck-constr" table="public.flight">
+			<expression> <![CDATA[((dest_airport)::text <> (start_airport)::text)]]> </expression>
+	</constraint>
+	<constraint name="flight_pkey" type="pk-constr" table="public.flight">
+		<columns names="flight_number" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="pilot" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="880" y="100"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="255"/>
+	</column>
+	<column name="flight_hours" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="qualification" not-null="true">
+		<type name="character varying" length="30"/>
+	</column>
+	<column name="date_of_birth" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="flight_hours_ok" type="ck-constr" table="public.pilot">
+			<expression> <![CDATA[(flight_hours > 100)]]> </expression>
+	</constraint>
+	<constraint name="pilot_pkey" type="pk-constr" table="public.pilot">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="pilot_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1" sql-disabled="true">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="passenger" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="980" y="360"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="255"/>
+	</column>
+	<column name="date_of_birth" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="address" not-null="true">
+		<type name="character varying" length="255"/>
+	</column>
+	<constraint name="passenger_pkey" type="pk-constr" table="public.passenger">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="passenger_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1" sql-disabled="true">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="flight_date" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="220" y="600"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="flight" not-null="true">
+		<type name="character varying" length="8"/>
+	</column>
+	<column name="pilot" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="airplane" not-null="true">
+		<type name="character varying" length="10"/>
+	</column>
+	<column name="start_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="flight_date_pkey" type="pk-constr" table="public.flight_date">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="flight_date_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1" sql-disabled="true">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="booking" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="780" y="660"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="flight_date" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="passenger" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="class" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="price" not-null="true">
+		<type name="numeric" length="8" precision="2"/>
+	</column>
+	<constraint name="booking_pkey" type="pk-constr" table="public.booking">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="booking_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1" sql-disabled="true">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<constraint name="airplane_airplane_type_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.airplane_type" table="public.airplane">
+	<columns names="airplane_type" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="flight_date_flight_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.flight" table="public.flight_date">
+	<columns names="flight" ref-type="src-columns"/>
+	<columns names="flight_number" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="flight_date_pilot_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.pilot" table="public.flight_date">
+	<columns names="pilot" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="flight_date_airplane_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.airplane" table="public.flight_date">
+	<columns names="airplane" ref-type="src-columns"/>
+	<columns names="tail_number" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="booking_flight_date_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.flight_date" table="public.booking">
+	<columns names="flight_date" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="booking_passenger_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.passenger" table="public.booking">
+	<columns names="passenger" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_flight_date_flight" type="relfk" layers="0"
+	 custom-color="#f094fa"
+	 src-table="public.flight_date"
+	 dst-table="public.flight" reference-fk="flight_date_flight_fkey"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="98.342" y="-11.553"/>
+	</label>
+</relationship>
+
+<relationship name="rel_flight_date_pilot" type="relfk" layers="0"
+	 custom-color="#c6d042"
+	 src-table="public.flight_date"
+	 dst-table="public.pilot" reference-fk="flight_date_pilot_fkey"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-76.0125" y="-51.0307"/>
+	</label>
+</relationship>
+
+<relationship name="rel_flight_date_airplane" type="relfk" layers="0"
+	 custom-color="#dbd96c"
+	 src-table="public.flight_date"
+	 dst-table="public.airplane" reference-fk="flight_date_airplane_fkey"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-113.297" y="-36.353"/>
+	</label>
+</relationship>
+
+<relationship name="rel_booking_flight_date" type="relfk" layers="0"
+	 custom-color="#fa93b1"
+	 src-table="public.booking"
+	 dst-table="public.flight_date" reference-fk="booking_flight_date_fkey"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-3.05878" y="8.54877"/>
+	</label>
+</relationship>
+
+<relationship name="rel_booking_passenger" type="relfk" layers="0"
+	 custom-color="#85df15"
+	 src-table="public.booking"
+	 dst-table="public.passenger" reference-fk="booking_passenger_fkey"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="117.493" y="-6.35299"/>
+	</label>
+</relationship>
+
+<relationship name="rel_airplane_airplane_type" type="relfk" layers="0"
+	 src-table="public.airplane"
+	 dst-table="public.airplane_type" reference-fk="airplane_airplane_type_fkey"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="115.817" y="-15.053"/>
+	</label>
+</relationship>
+
+</dbmodel>
