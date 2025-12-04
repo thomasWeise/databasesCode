@@ -1,7 +1,7 @@
 /* Inserting data into the tables for the K-||-----o<-L relationship. */
 
 -- Insert some rows into the table for entity type K.
-INSERT INTO k (x) VALUES ('123'), ('456'), ('789'), ('101');
+INSERT INTO k (x) VALUES ('123'), ('456'), ('789'), ('101'), ('202');
 
 -- Insert some rows into the table for entity type L, referencing K.
 INSERT INTO l (y, fkkid) VALUES ('AB', 1), ('CD', 1), ('EF', 4),
