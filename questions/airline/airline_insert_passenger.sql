@@ -8,5 +8,7 @@ VALUES
     ('Lars Peppa',    '1983-03-09', 'Hefei, China'),
     ('Dieter Pappa',  '1991-11-15', 'Dresden, Germany'),
     ('Anne Pippi',    '1972-10-22', 'Prague, Czech Republic'),
-    ('Liz Pappo',     '1993-06-12', 'Vienna, Austria')
+    ('Liz Pappo',     '1993-06-12', 'Vienna, Austria'),
+    ('Nicole Peppe',  '1956-08-22', 'Munich, Germany'),
+    ('Daniel Pippo',  '2002-07-03', 'Ximaen, Hefei')
 RETURNING *;

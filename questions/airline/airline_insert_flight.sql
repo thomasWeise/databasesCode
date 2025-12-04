@@ -6,5 +6,7 @@ VALUES ('XA1843', 'PEK', '13:30', 'HFE',  '1 hour  55 minutes'),
        ('XA1813', 'PEK', '07:55', 'HFE',  '1 hour  55 minutes'),
        ('XA1814', 'HFE', '10:45', 'PEK',  '2 hours 15 minutes'),
        ('XU489',  'PEK', '03:20', 'BER',  '9 hours 10 minutes'),
-       ('XU490',  'BER', '12:55', 'PEK', '10 hours 20 minutes')
+       ('XU490',  'BER', '12:55', 'PEK', '10 hours 20 minutes'),
+       ('XU6931', 'HFE', '09:10', 'XMN',  '1 hour  40 minutes'),
+       ('XU6932', 'XMN', '12:50', 'HFE',  '1 hour  30 minutes')
 RETURNING *;
